@@ -1,0 +1,17 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:latest",
+        "tslint-react",
+        "tslint-config-prettier"
+    ],
+    "jsRules": {},
+    "rules": {
+        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
+        "object-literal-sort-keys": false,
+        "jsx-boolean-value": ["never"],
+        "no-unused-expression": [true, "allow-new"],
+        "no-empty": [true, "allow-empty-functions"]
+    },
+    "rulesDirectory": []
+}

@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true, 
+    "allowJs": true,
+    "checkJs": true,
+    "jsx": "react-native",
+    "sourceMap": true,
+    "importHelpers": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "typeRoots": ["./@types", "./node_modules/@types"],
+    "paths": {
+      "@types": ["@types"],
+      "src/*": ["src/*"]
+    }
+  },
+  "include": ["./src/**/*", "./@types/**/*"],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "jeansFootball",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "16.8.3",
+    "react-native": "0.59.1",
+    "@types/react-native-uuid-generator": "^4.0.0",
+    "css-to-react-native": "^2.2.2",
+    "jsc-android": "^236355.1.1",
+    "mobx": "^5.9.0",
+    "mobx-react": "^5.4.3",
+    "mobx-state-tree": "^3.10.1",
+    "react-native-uuid-generator": "^5.0.0",
+    "react-navigation": "^2.11.2",
+    "realm": "^2.22.0",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/runtime": "^7.4.2",
+    "@react-native-community/eslint-config": "^0.0.3",
+    "babel-jest": "^24.5.0",
+    "eslint": "^5.15.3",
+    "jest": "^24.5.0",
+    "metro-react-native-babel-preset": "^0.53.1",
+    "react-test-renderer": "16.8.3",
+    "@babel/plugin-proposal-decorators": "^7.3.0",
+    "@types/react": "^16.7.20",
+    "@types/react-native": "^0.57.29",
+    "@types/react-navigation": "^2.11.2",
+    "@types/realm": "^1.13.0",
+    "@types/styled-components": "^4.1.6",
+    "babel-core": "^6.26.3",
+    "babel-plugin-module-resolver": "^3.1.3",
+    "react-native-typescript-transformer": "^1.2.11",
+    "tslint": "^5.12.1",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.4"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
