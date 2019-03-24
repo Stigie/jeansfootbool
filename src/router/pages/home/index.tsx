@@ -16,7 +16,7 @@ import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 import { ITodo, TodoStates } from '../../../models/todo'
 import TodoList, { TodoListTypes } from '../../../containers/todo'
-import Game from '../../../components/game'
+
 
 @observer
 class HomePage extends Component<
@@ -65,7 +65,7 @@ class HomePage extends Component<
   public render() {
     return (
       <Container>
-        <Game />
+        {/* <Game /> */}
         <TodoPreview>
           <TodoTitle>Last {this.maxItems} entries</TodoTitle>
           {this.renderTodo()}
