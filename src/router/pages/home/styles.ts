@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-import { Text as TextBase, Image, View, Animated,  ImageBackground as ImageBackgroundBase } from 'react-native'
+import styled, { css } from 'styled-components'
+import { Text as TextBase, Image, View, Animated, ImageBackground as ImageBackgroundBase, TouchableOpacity } from 'react-native'
+import { isIphoneX } from 'react-native-iphone-x-helper'
 
 export const ImageBackground = styled(ImageBackgroundBase)`
     height: 100%;
@@ -14,11 +15,12 @@ export const Circle = styled(View)`
   background-color: #0C1656;
   height: 250px;
   align-self: center;
-  top: -105px;
+  top:${
+  isIphoneX() ? '-85px' : '-95px'
+  };
 `
 
 export const Container = styled(View)`
-  /* padding-top: 30px; */
   flex: 1;
   align-content: space-between;
   background-color: #f5fcff;
@@ -34,7 +36,7 @@ export const BottomIconsContainer = styled(View)`
   flex-direction: row;
   align-items: center;
   padding: 0 30px;
-` 
+`
 
 export const VK = styled(Image)`
   height:25px;
@@ -58,42 +60,36 @@ export const Logo = styled(Image)`
   left: 25px;
 
 `
+export const ControlContainer = styled(View)`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content:center;
+  top:${
+  isIphoneX() ? '-85px' : '-95px'
+  };
 
-export const Text = styled(TextBase)`
-  text-align: center;
-  color: #e3f2fd;
-  font-size: 16px;
+`
+const Control = css`
+  width:303px;
+  height:80px;
+  align-self:flex-end;
+
 `
 
-export const Icon = styled(TextBase)`
-  text-align: center;
-  color: #333333;
-  font-size: 22px;
+export const ControlContainerInner = styled(TouchableOpacity)`
+  width: 100%;
+  display:flex;
+  align-self:stretch;
 `
 
-export const TodoPreview = styled(View)`
-  /* height: 50%; */
-  background-color: white;
+export const LeftControl = styled(ImageBackgroundBase)`
+  ${Control}
+  align-self: flex-start;
+  margin-bottom:30px;
 `
 
-export const TodoTitle = styled(TextBase)`
-  text-align: center;
-  color: white;
-  background-color: #4fc3f7;
-  padding: 5px 5px;
-  font-weight: 500;
-  font-size: 14px;
-  border-top-width: 1px;
-  border-top-color: #29b6f6;
-  border-bottom-width: 1px;
-  border-bottom-color: #81d4fa;
-`
-
-export const TodoButton = styled(View)`
-  background-color: #039be5;
-  padding: 10px 5px;
-  border-top-width: 1px;
-  border-top-color: #4fc3f7;
-  border-bottom-width: 1px;
-  border-bottom-color: #039be5;
+export const RigthControl = styled(ImageBackgroundBase)`
+  ${Control}
+  align-self: flex-end;
 `

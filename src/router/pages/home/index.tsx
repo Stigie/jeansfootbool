@@ -4,19 +4,20 @@ import { Routes } from "../..";
 import { NavigationInjectedProps } from "react-navigation";
 import {
   Container,
-  Text,
-  Icon,
-  TodoPreview,
-  TodoButton,
-  TodoTitle,
   ImageBackground,
   Circle,
   BottomIconsContainer,
   Logo,
   YouTube,
   Instagram,
-  VK 
+  VK,
+  ControlContainer,
+  LeftControl,
+  RigthControl,
+  ControlContainerInner,
+
 } from "./styles";
+import { StatusBar, Linking } from 'react-native'
 import { IStoresMap } from "../../../types";
 import connector from "../../../decorators/connector";
 import { observable } from "mobx";
@@ -26,14 +27,17 @@ import TodoList, { TodoListTypes } from "../../../containers/todo";
 
 @observer
 class HomePage extends Component<
-  ReturnType<typeof storesToProps> & NavigationInjectedProps
+ReturnType<typeof storesToProps> & NavigationInjectedProps
 > {
   @observable
   public inputText: string | null = null;
   public maxItems = 10;
 
   static navigationOptions = {
-    tabBarIcon: () => <Icon>&#x2726;</Icon>
+    headerStyle: {
+      backgroundColor: 'white',
+    },
+    // tabBarIcon: () => <Icon>&#x2726;</Icon>
   };
 
   public goToTODO = () => {
@@ -64,22 +68,38 @@ class HomePage extends Component<
     });
   };
 
-  public renderTodo() {
-    return <TodoList type={TodoListTypes.Active} maxLength={10} />;
+
+  public handleClick = () => {
+    Linking.canOpenURL('https://tlgrm.ru/channels/@temablog').then(supported => {
+      if (supported) {
+        Linking.openURL('https://tlgrm.ru/channels/@temablog');
+      } else {
+        console.log("Don't know how to open URI: https://tlgrm.ru/channels/@temablog");
+      }
+    });
   }
 
   public render() {
     return (
       <Container>
+        <StatusBar backgroundColor="blue" barStyle="light-content" />
         <ImageBackground source={require("./assets/background.jpg")}>
-        <Circle>
-          <Logo source={require('./assets/logo_1.png')}/>
-        </Circle>
-        <BottomIconsContainer>
-          <VK source={require('./assets/vk.png')}/>
-          <Instagram source={require('./assets/Instagram_icon.png')}/>
-          <YouTube source={require('./assets/yutub.png')}/>
-        </BottomIconsContainer>
+          <Circle>
+            <Logo source={require('./assets/logo_1.png')} />
+          </Circle>
+          <ControlContainer>
+            <ControlContainerInner >
+              <LeftControl source={require("./assets/nachat_obuchenie.png")} />
+            </ControlContainerInner>
+            <ControlContainerInner onPress={this.handleClick}>
+              <RigthControl source={require("./assets/poluchit_stikery.png")} />
+            </ControlContainerInner>
+          </ControlContainer>
+          <BottomIconsContainer>
+            <VK source={require('./assets/vk.png')} />
+            <Instagram source={require('./assets/Instagram_icon.png')} />
+            <YouTube source={require('./assets/yutub.png')} />
+          </BottomIconsContainer>
         </ImageBackground>
       </Container>
     );
