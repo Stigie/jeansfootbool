@@ -1,59 +1,43 @@
-import { createDrawerNavigator, createBottomTabNavigator } from 'react-navigation'
-import HomePage from './pages/home'
-import TODOPage from './pages/todo'
-import SettingsPage from './pages/settings/indes'
+import { createSwitchNavigator } from "react-navigation";
+import HomePage from "./pages/home";
+import TODOPage from "./pages/todo";
+import LoadingPage from "./pages/loadingPage";
+import SettingsPage from "./pages/settings/index";
 
 export enum Routes {
-  Home = 'Welcome',
-  Settings = 'Settings',
-  TODO = 'TODO',
+  Loading = "Loading",
+  Home = "Welcome",
+  Settings = "Settings",
+  TODO = "TODO"
 }
 
-const HomeNavigator = createBottomTabNavigator(
+const AppNavigator = createSwitchNavigator(
   {
-    [Routes.Home]: {
+    [`${Routes.Home}`]: {
       screen: HomePage,
       navigationOptions: {
-        title: 'Home',
-      },
-    },
-    [Routes.Settings]: {
-      screen: SettingsPage,
-      navigationOptions: {
-        title: 'Settings',
-      },
-    },
-  },
-  {
-    initialRouteName: Routes.Home,
-    animationEnabled: true,
-    swipeEnabled: true
-  },
-)
-
-const AppNavigator = createDrawerNavigator(
-  {
-    [`${Routes.Home}Navigator`]: {
-      screen: HomeNavigator,
-      navigationOptions: {
-        drawerLabel: 'Home',
-        title: 'Home',
-      },
+        drawerLabel: "Home",
+        title: "Home"
+      }
     },
     [Routes.TODO]: {
       screen: TODOPage,
       navigationOptions: {
-        drawerLabel: 'Todo',
-        title: 'Todo',
+        drawerLabel: "Todo",
+        title: "Todo"
       }
     },
+    [Routes.Loading]: {
+      screen: LoadingPage,
+      navigationOptions: {
+        drawerLabel: "Loading",
+        title: "Loading"
+      }
+    }
   },
   {
-    initialRouteName: `${Routes.Home}Navigator`,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed',
-    },
-  },
-)
+    initialRouteName: `${Routes.Loading}`,
+  }
+);
 
-export default AppNavigator
+export default AppNavigator;

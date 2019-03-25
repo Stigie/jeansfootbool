@@ -1,12 +1,62 @@
 import styled from 'styled-components'
-import { Text as TextBase, View, Animated } from 'react-native'
+import { Text as TextBase, Image, View, Animated,  ImageBackground as ImageBackgroundBase } from 'react-native'
+
+export const ImageBackground = styled(ImageBackgroundBase)`
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+`
+
+export const Circle = styled(View)`
+  width: 250px;
+  border-radius: 200;
+  background-color: #0C1656;
+  height: 250px;
+  align-self: center;
+  top: -105px;
+`
 
 export const Container = styled(View)`
-  padding-top: 30px;
+  /* padding-top: 30px; */
   flex: 1;
   align-content: space-between;
   background-color: #f5fcff;
   justify-content: space-between;
+`
+
+export const BottomIconsContainer = styled(View)`
+  background-color: #0C1656;
+  width: 100%;
+  height: 90px;
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 30px;
+` 
+
+export const VK = styled(Image)`
+  height:25px;
+  width: 45px;
+`
+
+export const Instagram = styled(Image)`
+  height:30px;
+  width: 30px;
+`
+
+export const YouTube = styled(Image)`
+  height:30px;
+  width: 40px;
+`
+
+export const Logo = styled(Image)`
+  height: 50%;
+  width:80%;
+  top: 115px;
+  left: 25px;
+
 `
 
 export const Text = styled(TextBase)`
@@ -22,7 +72,7 @@ export const Icon = styled(TextBase)`
 `
 
 export const TodoPreview = styled(View)`
-  height: 50%;
+  /* height: 50%; */
   background-color: white;
 `
 
