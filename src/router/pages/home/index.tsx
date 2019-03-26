@@ -22,8 +22,6 @@ import { IStoresMap } from "../../../types";
 import connector from "../../../decorators/connector";
 import { observable } from "mobx";
 import { observer } from "mobx-react";
-import { ITodo, TodoStates } from "../../../models/todo";
-import TodoList, { TodoListTypes } from "../../../containers/todo";
 
 @observer
 class HomePage extends Component<
@@ -40,36 +38,12 @@ ReturnType<typeof storesToProps> & NavigationInjectedProps
     // tabBarIcon: () => <Icon>&#x2726;</Icon>
   };
 
-  public goToTODO = () => {
-    const { navigation } = this.props;
+  public goToMenu = () => {
+    const { navigation } = this.props 
+    navigation.navigate(Routes.Menu)
+  }
 
-    navigation.navigate(Routes.TODO);
-  };
-
-  public onChangeText = (text: string) => {
-    this.inputText = text;
-  };
-
-  public onChangeState = (item: ITodo, state: TodoStates) => {
-    const { updateItem } = this.props.todoStore;
-
-    updateItem({
-      ...item,
-      state
-    });
-  };
-
-  public onEdit = (item: ITodo, text: string) => {
-    const { updateItem } = this.props.todoStore;
-
-    updateItem({
-      ...item,
-      text
-    });
-  };
-
-
-  public handleClick = () => {
+  public goToTelegram = () => {
     Linking.canOpenURL('https://tlgrm.ru/channels/@temablog').then(supported => {
       if (supported) {
         Linking.openURL('https://tlgrm.ru/channels/@temablog');
@@ -88,10 +62,10 @@ ReturnType<typeof storesToProps> & NavigationInjectedProps
             <Logo source={require('./assets/logo_1.png')} />
           </Circle>
           <ControlContainer>
-            <ControlContainerInner >
+            <ControlContainerInner  onPress={this.goToMenu}>
               <LeftControl source={require("./assets/nachat_obuchenie.png")} />
             </ControlContainerInner>
-            <ControlContainerInner onPress={this.handleClick}>
+            <ControlContainerInner onPress={this.goToTelegram}>
               <RigthControl source={require("./assets/poluchit_stikery.png")} />
             </ControlContainerInner>
           </ControlContainer>

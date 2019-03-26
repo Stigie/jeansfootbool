@@ -1,14 +1,13 @@
 import { createSwitchNavigator } from "react-navigation";
 import HomePage from "./pages/home";
-import TODOPage from "./pages/todo";
 import LoadingPage from "./pages/loadingPage";
-import SettingsPage from "./pages/settings/index";
+import MenuPage from "./pages/menuPage";
 
 export enum Routes {
   Loading = "Loading",
   Home = "Welcome",
-  Settings = "Settings",
-  TODO = "TODO"
+  TODO = "TODO",
+  Menu = "Menu"
 }
 
 const AppNavigator = createSwitchNavigator(
@@ -20,18 +19,18 @@ const AppNavigator = createSwitchNavigator(
         title: "Home"
       }
     },
-    [Routes.TODO]: {
-      screen: TODOPage,
-      navigationOptions: {
-        drawerLabel: "Todo",
-        title: "Todo"
-      }
-    },
     [Routes.Loading]: {
       screen: LoadingPage,
       navigationOptions: {
         drawerLabel: "Loading",
         title: "Loading"
+      }
+    },
+    [Routes.Menu]: {
+      screen: MenuPage,
+      navigationOptions: {
+        drawerLabel: "Menu",
+        title: "Menu"
       }
     }
   },

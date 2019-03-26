@@ -1,6 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import { Routes } from "../..";
+import {StatusBar} from 'react-native' 
 import { NavigationInjectedProps } from "react-navigation";
 import {
   Container,
@@ -22,12 +23,13 @@ class LoadingPage extends Component<
 
   public componentDidMount(){
     const { navigation } = this.props 
-    setTimeout( () => {navigation.navigate(Routes.Home)}, 5000 )
+    setTimeout( () => {navigation.navigate(Routes.Home)}, 0 )
   }
 
   public render() {
     return (
       <Container>
+        <StatusBar backgroundColor="blue" barStyle="light-content" />
         <ImageBackground source={require('./assets/jeansLogo.jpg')}/>      
       </Container>
     );
