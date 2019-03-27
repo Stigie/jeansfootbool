@@ -1,6 +1,9 @@
 package com.jeansfootball;
 
 import com.facebook.react.ReactActivity;
+import io.realm.react.RealmReactPackage;
+import com.inprogress.reactnativeyoutube.ReactNativeYouTube;
+import io.github.traviskn.rnuuidgenerator.RNUUIDGeneratorPackage;
 
 public class MainActivity extends ReactActivity {
 

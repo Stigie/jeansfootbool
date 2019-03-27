@@ -23,7 +23,7 @@ class LoadingPage extends Component<
 
   public componentDidMount(){
     const { navigation } = this.props 
-    setTimeout( () => {navigation.navigate(Routes.Home)}, 0 )
+    setTimeout( () => {navigation.navigate(Routes.Home)}, 5000 )
   }
 
   public render() {

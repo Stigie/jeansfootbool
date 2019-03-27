@@ -1,4 +1,5 @@
 import { LeftControl, RigthControl } from "./styles";
+import React from "react";
 
 const menu = [
   {
@@ -7,7 +8,7 @@ const menu = [
       <LeftControl
         key={"Пас"}
         source={require("./assets/pas.png")}
-        resizeMode={"contain"}
+        resizeMode={"stretch"}
       />
     ),
     children: [
@@ -27,7 +28,7 @@ const menu = [
       <RigthControl
         key={"Панна"}
         source={require("./assets/panna.png")}
-        resizeMode={"contain"}
+        resizeMode={"stretch"}
       />
     ),
     children: [
@@ -68,7 +69,7 @@ const menu = [
       <LeftControl
         key={"Чеканка"}
         source={require("./assets/chekanka.png")}
-        resizeMode={"contain"}
+        resizeMode={"stretch"}
       />
     ),
     children: [
@@ -84,7 +85,7 @@ const menu = [
       <RigthControl
         key={"Фристайл"}
         source={require("./assets/fristayl.png")}
-        resizeMode={"contain"}
+        resizeMode={"stretch"}
       />
     ),
     children: [
@@ -109,7 +110,7 @@ const menu = [
       <LeftControl
         key={"Прием мяча"}
         source={require("./assets/priem_myacha.png")}
-        resizeMode={"contain"}
+        resizeMode={"stretch"}
       />
     ),
     children: [
@@ -125,7 +126,7 @@ const menu = [
       <RigthControl
         key={"Навес"}
         source={require("./assets/naves.png")}
-        resizeMode={"contain"}
+        resizeMode={"stretch"}
       />
     ),
     children: [
@@ -145,7 +146,7 @@ const menu = [
       <LeftControl
         key={"Реализация моментов"}
         source={require("./assets/realiz_moment.png")}
-        resizeMode={"contain"}
+        resizeMode={"stretch"}
       />
     ),
     children: [
@@ -167,7 +168,7 @@ const menu = [
       <RigthControl
         key={"Удар"}
         source={require("./assets/udar.png")}
-        resizeMode={"contain"}
+        resizeMode={"stretch"}
       />
     ),
     children: [
@@ -188,7 +189,7 @@ const menu = [
       <LeftControl
         key={"Вратарь"}
         source={require("./assets/vratar.png")}
-        resizeMode={"contain"}
+        resizeMode={"stretch"}
       />
     ),
     children: [
@@ -208,7 +209,7 @@ const menu = [
       <RigthControl
         key={"Финты"}
         source={require("./assets/finty.png")}
-        resizeMode={"contain"}
+        resizeMode={"stretch"}
       />
     ),
     children: [
@@ -270,7 +271,7 @@ const menu = [
       <LeftControl
         key={"Дриблинг"}
         source={require("./assets/dribling.png")}
-        resizeMode={"contain"}
+        resizeMode={"stretch"}
       />
     ),
     children: [
@@ -291,7 +292,7 @@ const menu = [
       <RigthControl
         key={"Тренер"}
         source={require("./assets/trener.png")}
-        resizeMode={"contain"}
+        resizeMode={"stretch"}
       />
     ),
     children: [

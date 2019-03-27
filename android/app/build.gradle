@@ -138,9 +138,12 @@ android {
 }
 
 dependencies {
+    compile project(':realm')
+    compile project(':react-native-youtube')
+    compile project(':react-native-uuid-generator')
+    implementation project(':realm')
     implementation project(':react-native-youtube')
     implementation project(':react-native-uuid-generator')
-    implementation project(':realm')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules

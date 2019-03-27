@@ -6,20 +6,16 @@ import { NavigationInjectedProps } from "react-navigation";
 import {
   Container,
   ImageBackground,
-  ControlContainer,
-  LeftControl,
-  RigthControl,
-  ControlContainerInner,
-  Logo,
-  LogoContainer
+  VideosContainer,
+  Video,
+  VideoContainer,
+  Text
 } from "./styles";
 import { IStoresMap } from "../../../types";
 import connector from "../../../decorators/connector";
 import { observable } from "mobx";
 import { observer } from "mobx-react";
 import GestureRecognizer from "react-native-swipe-gestures";
-import YouTube from "react-native-youtube";
-
 
 const styles = StyleSheet.create({
   player: {
@@ -31,7 +27,7 @@ const styles = StyleSheet.create({
 
 @observer
 class VideoPage extends Component<
-  ReturnType<typeof storesToProps> & NavigationInjectedProps
+ReturnType<typeof storesToProps> & NavigationInjectedProps
 > {
   static navigationOptions = {
     title: ""
@@ -61,34 +57,37 @@ class VideoPage extends Component<
       directionalOffsetThreshold: 80
     };
 
+    const links = this.props.navigation.getParam('links')
+
     return (
       <Container>
         <GestureRecognizer config={config} onSwipeLeft={this.goBack}>
           <StatusBar backgroundColor="blue" barStyle="light-content" />
           <ImageBackground source={require("./assets/background.jpg")}>
-            <ControlContainer>
-              <YouTube
-                // You must have an API Key for the player to load in Android
-                apiKey="AIzaSyDNWZndbbwD4ST9yPKvnoetGjjqdaghEUw"
-                // Un-comment one of videoId / videoIds / playlist.
-                // You can also edit these props while Hot-Loading in development mode to see how
-                // it affects the loaded native module
-                videoId="3j6pWm5yQFw"
-                // videoIds={['HcXNPI-IPPM', 'XXlZfc1TrD0', 'czcjU1w-c6k', 'uMK0prafzw0']}
-                // playlistId="PLF797E961509B4EB5"
-                play={this.state.isPlaying}
-                loop={this.state.isLooping}
-                fullscreen={this.state.fullscreen}
-                controls={1}
-                style={[
-                  { height: 100 },
-                  styles.player,
-                ]}
-              />
-            </ControlContainer>
-            <LogoContainer>
-              <Logo source={require("../home/assets/logo_1.png")} />
-            </LogoContainer>
+            <VideosContainer onLayout={({ nativeEvent: { layout: { width } } }) => {
+              if (!this.state.containerMounted) this.setState({ containerMounted: true });
+              if (this.state.containerWidth !== width) this.setState({ containerWidth: width });
+            }}>
+              {
+                links.map(item => (
+                  <VideoContainer key={item.name} >
+                    <Video
+                      videoId={item.id}   // The YouTube video ID
+                      play={false}             // control playback of video with true/false
+                      fullscreen={this.state.fullscreen}       // control whether the video should play in fullscreen or inline
+                      loop={true}
+                      ontrols={0}
+                      showFullscreenButton={true}
+                      style={[
+                        { height: PixelRatio.roundToNearestPixel(this.state.containerWidth  / (16 / 9)) },
+                      ]}
+                      onChangeFullscreen={e => this.setState({ fullscreen: e.isFullscreen })}
+                      />
+                    <Text>{item.name}</Text>
+                  </VideoContainer>
+                ))
+              }
+            </VideosContainer>
           </ImageBackground>
         </GestureRecognizer>
       </Container>

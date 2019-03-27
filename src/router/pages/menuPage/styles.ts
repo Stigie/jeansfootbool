@@ -38,6 +38,7 @@ export const Logo = styled(Image)`
   width:150px;
 `
 export const ControlContainer = styled(View)`
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

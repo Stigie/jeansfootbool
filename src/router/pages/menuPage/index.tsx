@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import { Component } from "react";
 import { Routes } from "../..";
 import { StatusBar } from "react-native";
@@ -32,8 +32,8 @@ class MenuPage extends Component<
     this.props.navigation.navigate(Routes.Home);
   };
 
-  public openCategory = () => {
-    this.props.navigation.navigate(Routes.Video);
+  public openCategory = (links: []) => {
+    this.props.navigation.navigate(Routes.Video, {links});
   };
 
   public render() {
@@ -51,7 +51,7 @@ class MenuPage extends Component<
               {menu.map(item => (
                 <ControlContainerInner
                   key={item.name}
-                  onPress={this.openCategory}
+                  onPress={() => {this.openCategory(item.children)}}
                 >
                   {item.item}
                 </ControlContainerInner>
