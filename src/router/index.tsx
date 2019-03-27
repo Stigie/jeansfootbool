@@ -2,11 +2,12 @@ import { createSwitchNavigator } from "react-navigation";
 import HomePage from "./pages/home";
 import LoadingPage from "./pages/loadingPage";
 import MenuPage from "./pages/menuPage";
+import Video from './pages/videosPage'
 
 export enum Routes {
   Loading = "Loading",
   Home = "Welcome",
-  TODO = "TODO",
+  Video = "Video",
   Menu = "Menu"
 }
 
@@ -24,6 +25,13 @@ const AppNavigator = createSwitchNavigator(
       navigationOptions: {
         drawerLabel: "Loading",
         title: "Loading"
+      }
+    },
+    [Routes.Video]: {
+      screen: Video,
+      navigationOptions: {
+        drawerLabel: "Video",
+        title: "Video"
       }
     },
     [Routes.Menu]: {
