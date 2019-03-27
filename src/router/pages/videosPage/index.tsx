@@ -52,7 +52,7 @@ class VideoPage extends Component<
   };
 
   public goBack = () => {
-    this.props.navigation.navigate(Routes.Home);
+    this.props.navigation.navigate(Routes.Menu);
   };
 
   public render() {
