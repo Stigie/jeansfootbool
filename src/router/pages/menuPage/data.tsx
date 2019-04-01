@@ -14,11 +14,11 @@ const menu = [
     children: [
       {
         name: "УПРАЖНЕНИЕ НА ПАС ДЛЯ НОВИЧКОВ► Exercise on the ball",
-        id: "3j6pWm5yQFw"
+        key: "3j6pWm5yQFw"
       },
       {
         name: "ЛУЧШЕЕ УПРАЖНЕНИЕ на ТОЧНЫЙ  НАВЕС И ПАС",
-        id: "m1urLs0QYtg"
+        key: "m1urLs0QYtg"
       }
     ]
   },
@@ -34,32 +34,32 @@ const menu = [
     children: [
       {
         name: "ЛУЧШИЕ ПАННА ФИНТЫ / Обучение для НОВИЧКОВ",
-        id: "cXfsta_0WII"
+        key: "cXfsta_0WII"
       },
       {
         name: "TRAINING THE PANNA FOR THE CHIPS FOR NEWBIES",
-        id: "8KBqoVi8Izw"
+        key: "8KBqoVi8Izw"
       },
       {
         name: "ПАННА ОБУЧЕНИЕ ● ФИШКИ ДЛЯ НОВИЧКОВ ● PANNA TUTORIAL SKILL",
-        id: "gygZwLGp958"
+        key: "gygZwLGp958"
       },
       {
         name:
           "ПОКАЖИ СЕБЯ НА ПОЛЕ● ПАННА ФИШКИ ДЛЯ НОВИЧКОВ ОБУЧЕНИЕ/ PANNA SKILL TUTORIAL",
-        id: "TUYP-5FpkA4"
+        key: "TUYP-5FpkA4"
       },
       {
         name: "ЭТИ НАВЫКИ в ПАННА ПОМОГУТ ТЕБЕ УДИВИТЬ ЛЮБОГО",
-        id: "tIezPWq7jDI"
+        key: "tIezPWq7jDI"
       },
       {
         name: "ПАННА ОБУЧЕНИЕ ● ФИШКИ ДЛЯ НОВИЧКОВ ● PANNA TUTORIAL SKILL",
-        id: "dh0RtDmOYJU"
+        key: "dh0RtDmOYJU"
       },
       {
         name: "САМАЯ КРУТАЯ ФИШКА В ФУТБОЛЕ ТЕЛЕПОРТ от Séan Garnier/ОБУЧЕНИ",
-        id: "tJApc1DRQWI"
+        key: "tJApc1DRQWI"
       }
     ]
   },
@@ -75,7 +75,7 @@ const menu = [
     children: [
       {
         name: "ЛУЧШИЕ УПРАЖНЕНИЯ на ЧЕКАНКУ МЯЧА / ОБУЧЕНИЕ ДЛЯ НОВИЧКОВ",
-        id: "KNp00rLD8sI"
+        key: "KNp00rLD8sI"
       }
     ]
   },
@@ -92,15 +92,15 @@ const menu = [
       {
         name:
           "БАЗОВОЕ ОБУЧЕНИЕ КРОССОВЕРУ ЗА 1 МИНУТУ?! ЛЕГКО/ У ТЕБЯ ТОЖЕ ПОЛУЧИТСЯ",
-        id: "-q-YgNbdjB4"
+        key: "-q-YgNbdjB4"
       },
       {
         name: "ОБУЧЕНИЕ ATW ЗА 3 МИНУТЫ?? ЛЕГКО! ATW TUTORIAL SKILL",
-        id: "3ykIQJwu56Y"
+        key: "3ykIQJwu56Y"
       },
       {
         name: "САМАЯ ЭФФЕКТНАЯ ФИШКА ОТ РОНАЛДИНЬО● ОБУЧЕНИЕ СКОРПИОНУ ●",
-        id: "Ei8uHqUU3DE"
+        key: "Ei8uHqUU3DE"
       }
     ]
   },
@@ -116,7 +116,7 @@ const menu = [
     children: [
       {
         name: "ДВА ЛУЧШИХ УПРАЖНЕНИЯ НА ОБРАБОТКУ И ПРИЕМ МЯЧА",
-        id: "4Dr4esVZWlo"
+        key: "4Dr4esVZWlo"
       }
     ]
   },
@@ -132,11 +132,11 @@ const menu = [
     children: [
       {
         name: "ЛУЧШЕЕ УПРАЖНЕНИЕ на ТОЧНЫЙ НАВЕС И ПАС",
-        id: "m1urLs0QYtg"
+        key: "m1urLs0QYtg"
       },
       {
         name: "ЛУЧШИЙ ЛАЙФХАК на ТОЧНУЮ ПЕРЕДАЧУ",
-        id: "0ijMSVgC_-4"
+        key: "0ijMSVgC_-4"
       }
     ]
   },
@@ -153,12 +153,12 @@ const menu = [
       {
         name:
           "100% РЕАЛИЗАЦИЯ | ОБУЧЕНИЕ ПЕНАЛЬТИ ДЛЯ НОВИЧКОВ ОТ АНРИ И ГАРНЬЕ►TUTORIAL HENRY AND GARNIER",
-        id: "yVqGd-VZC5M"
+        key: "yVqGd-VZC5M"
       },
       {
         name:
           "КАК ЗАБИТЬ 1 НА 1 СО 100% ГАРАНТИЕЙ / ОБУЧЕНИЕ ДЛЯ НАЧИНАЮЩИХ /РЕАЛИЗУЙ СВОЙ МОМЕНТ",
-        id: "3ouw2OReQRU"
+        key: "3ouw2OReQRU"
       }
     ]
   },
@@ -174,12 +174,12 @@ const menu = [
     children: [
       {
         name: "КАК ПОСТАВИТЬ ХОРОШИЙ УДАР в ИГРЕ",
-        id: "eGLVZbpGjuA"
+        key: "eGLVZbpGjuA"
       },
       {
         name:
           "НАУЧИСЬ КРУТИТЬ С ОСТРОГО УГЛА КАК ФРЭНК ЛЭМПАРД! СУПЕР ГОЛ ⚽ FRANK LAMPARD SKILL",
-        id: "-B5VPfXEvWY"
+        key: "-B5VPfXEvWY"
       }
     ]
   },
@@ -195,11 +195,11 @@ const menu = [
     children: [
       {
         name: "ЛУЧШИЕ УПРАЖНЕНИЯ ДЛЯ ВРАТАРЯ / ОБУЧЕНИЕ ДЛЯ НОВИЧКОВ",
-        id: "CuCLuM4g1PI"
+        key: "CuCLuM4g1PI"
       },
       {
         name: "САМЫЕ УЖАСНЫЕ ОШИБКИ В ИГРЕ / НИКОГДА ТАК НЕ ДЕЛАЙ",
-        id: "lZZkBgcRn3k"
+        key: "lZZkBgcRn3k"
       }
     ]
   },
@@ -209,59 +209,59 @@ const menu = [
       <RigthControl
         key={"Финты"}
         source={require("./assets/finty.png")}
-        resizeMode={"stretch"}
+        resizeMode={"cover"}
       />
     ),
     children: [
       {
         name: "СУПЕР ФИНТ NINJA AKKA / ОБЫГРАЕШЬ ЛЮБОГО",
-        id: "cJdI77vk16Y"
+        key: "cJdI77vk16Y"
       },
       {
         name: "ТЬЯГО АЛЬКАНТАРА и ЕГО ФИНТ / ОБУЧЕНИЕ ДЛЯ НОВИЧКОВ",
-        id: "Q3AKW9PAwyA"
+        key: "Q3AKW9PAwyA"
       },
       {
         name: "ЛУЧШИЙ ФИНТ АЛИСОНА и НЕЙМАРА / ОБУЧЕНИЕ для НОВИЧКОВ",
-        id: "PUuG7bBHvXk"
+        key: "PUuG7bBHvXk"
       },
       {
         name: "ЛУЧШИЙ ФИНТ ИБРАГИМОВИЧА / ОБУЧЕНИЕ ДЛЯ НОВИЧКОВ",
-        id: "kbxTOw-5rKk"
+        key: "kbxTOw-5rKk"
       },
       {
         name: "ЛУЧШИЕ ФИНТЫ ДЛЯ НОВИЧКОВ со 100% ПРОХОДИМОСТЬЮ",
-        id: "MtJTGlN1f0Y"
+        key: "MtJTGlN1f0Y"
       },
       {
         name: "ЛЕГКИЕ ФИНТЫ ДЛЯ КРУТОЙ ИГРЫ / ОБУЧЕНИЕ ДЛЯ НОВИЧКОВ",
-        id: "YLs-q4s_WPE"
+        key: "YLs-q4s_WPE"
       },
       {
         name: "УДИВИ ВСЕХ НА ТРЕНИРОВКЕ / ОБУЧЕНИЕ ПО ФУТБОЛУ",
-        id: "aU0fZ4QXb4g"
+        key: "aU0fZ4QXb4g"
       },
       {
         name: "КРИШТИАНУ РОНАЛДУ И ЕГО ХИТРЫЕ ФИНТЫ / ОБУЧЕНИЕ ФУТБОЛУ",
-        id: "CGmuVROoe_s"
+        key: "CGmuVROoe_s"
       },
       {
         name:
           "ОБУЧЕНИЕ РАДУГЕ НЕЙМАРА И ЗНАМЕНИТОМУ ФИНТУ РОНАЛДИНЬО ДЛЯ НОВИЧКОВ",
-        id: "DqnLr6xPve4"
+        key: "DqnLr6xPve4"
       },
       {
         name: "ЛОЖНАЯ РАБОНА от RONALDO и AKKA / ОБУЧЕНИЕ ДЛЯ ШКОЛЬНИКОВ",
-        id: "uKcbVmTgZkg"
+        key: "uKcbVmTgZkg"
       },
       {
         name:
           "СПИННЕР В ФУТБОЛЕ ЗА 1 МИНУТУ/SPINNER IN FOOTBAL TUTORIAL ONE MOMENT",
-        id: "ubCRZCM0Svg"
+        key: "ubCRZCM0Svg"
       },
       {
-        name: "ФИНТЫ ДЛЯ НОВИЧКОВ ОТ POGBA И ZIDANE",
-        id: "_crTwKlTm_8"
+        name: "ФИНТЫ ДЛЯ НОВИЧКОВ ОТ POGBA И ZkeyANE",
+        key: "_crTwKlTm_8"
       }
     ]
   },
@@ -278,11 +278,11 @@ const menu = [
       {
         name:
           "МОЛОДОЙ КРИШТИАНУ РОНАЛДУ ОБУЧАЕТ ТЕХНИКЕ ● ТАК ДОЛЖЕН УМЕТЬ ДЕЛАТЬ КАЖДЫЙ ФУТБОЛИСТ",
-        id: "QNUNUUcbbHE"
+        key: "QNUNUUcbbHE"
       },
       {
         name: "КОНТРОЛЬ И ДРИБЛИНГ В ТВОЕЙ ИГРЕ",
-        id: "mNMZt0CfvWE"
+        key: "mNMZt0CfvWE"
       }
     ]
   },
@@ -298,15 +298,15 @@ const menu = [
     children: [
       {
         name: "Я ТРЕНЕР на ПЕРВОМ КАНАЛЕ / ГОТОВЛЮ БЛОНДИНКУ К ЧМ-2018",
-        id: "6GzNOfDWnSg"
+        key: "6GzNOfDWnSg"
       },
       {
         name: "ТРЕНЕР БЛОГЕРОВ /ОБУЧЕНИЕ ФИНТАМ",
-        id: "x6L-ihq32x0"
+        key: "x6L-ihq32x0"
       },
       {
         name: "ТРЕНЕР / ОБУЧЕНИЕ ЭЛАСТИКО, ПРИЕМУ МЯЧА, И НОЖНИЦАМ",
-        id: "276ljWp3CZI"
+        key: "276ljWp3CZI"
       }
     ]
   }

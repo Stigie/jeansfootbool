@@ -17,7 +17,7 @@ import {
   ControlContainerInner,
 
 } from "./styles";
-import { StatusBar, Linking } from 'react-native'
+import { StatusBar, Linking, PixelRatio } from 'react-native'
 import { IStoresMap } from "../../../types";
 import connector from "../../../decorators/connector";
 import { observable } from "mobx";
@@ -36,6 +36,10 @@ ReturnType<typeof storesToProps> & NavigationInjectedProps
       backgroundColor: 'white',
     },
     // tabBarIcon: () => <Icon>&#x2726;</Icon>
+  };
+
+  state = {
+    containerWidth: 100,
   };
 
   public goToMenu = () => {
@@ -61,12 +65,19 @@ ReturnType<typeof storesToProps> & NavigationInjectedProps
           <Circle>
             <Logo source={require('./assets/logo_1.png')} />
           </Circle>
-          <ControlContainer>
-            <ControlContainerInner  onPress={this.goToMenu}>
-              <LeftControl source={require("./assets/nachat_obuchenie.png")} />
+          <ControlContainer  onLayout={({ nativeEvent: { layout: { width } } }) => {
+              if (this.state.containerWidth !== width) this.setState({ containerWidth: width });
+            }}>
+            <ControlContainerInner  onPress={this.goToMenu} style={[
+                    { height: PixelRatio.roundToNearestPixel(this.state.containerWidth / 6) },
+                    { marginBottom: 40}
+                  ]}>
+              <LeftControl source={require("./assets/nachat_obuchenie.png")}  resizeMode={"stretch"}/>
             </ControlContainerInner>
-            <ControlContainerInner onPress={this.goToTelegram}>
-              <RigthControl source={require("./assets/poluchit_stikery.png")} />
+            <ControlContainerInner onPress={this.goToTelegram} style={[
+                    { height: PixelRatio.roundToNearestPixel(this.state.containerWidth / 6) },
+                  ]}>
+              <RigthControl source={require("./assets/poluchit_stikery.png")} resizeMode={"stretch"} />
             </ControlContainerInner>
           </ControlContainer>
           <BottomIconsContainer>

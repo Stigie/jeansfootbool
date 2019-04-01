@@ -45,16 +45,17 @@ export const ControlContainer = styled(View)`
   justify-content:space-between;
   align-items: center;
   align-self: center;
+  /* height: 90%; */
 
 `
 const Control = css`
   width:45%;
-  height:35px;
   margin-bottom:30px;
 
 `
 
 export const ControlContainerInner = styled(TouchableOpacity)`
+
   ${Control}
 `
 

@@ -1,17 +1,20 @@
 import styled, { css } from 'styled-components'
-import { Text as TextBase, View, Animated, ImageBackground as ImageBackgroundBase, ScrollView, PixelRatio } from 'react-native'
+import { Text as TextBase, View, Animated, ImageBackground as ImageBackgroundBase, ScrollView, PixelRatio, FlatList } from 'react-native'
 import YouTube from "react-native-youtube";
 import { isIphoneX, getStatusBarHeight } from 'react-native-iphone-x-helper'
+import GestureRecognizerBase from "react-native-swipe-gestures";
 
 
 export const ImageBackground = styled(ImageBackgroundBase)`
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100%;
+    width:100%;
+    padding-bottom:30px;
     padding-top:${
-      getStatusBarHeight()
-    };
+  getStatusBarHeight()
+  };
 `
 
 export const Text = styled(TextBase)`
@@ -22,33 +25,48 @@ export const Text = styled(TextBase)`
 `
 
 export const Container = styled(View)`
-  flex: 1;
   align-content: center;
   background-color: #f5fcff;
   justify-content: center;
+  height: 100%;
+  width:100%;
 
 `
-export const VideosContainer = styled(ScrollView)`
-  display: flex;
+
+export const ScrollContainer = styled(View)`
+    height: 100%;
+    padding-bottom:20px;
+    /* background-color: #000000; */
+`
+
+export const VideosContainer = styled(FlatList)`
+  /* display: flex; */
   height: 100%;
-  overflow:scroll;
+  /* overflow:scroll; */
   /* flex-wrap: wrap;
   flex-direction: row;
   justify-content:space-between;
   align-items: center;
   align-self: center; */
-  padding:20px;
-
+  padding:20px 20px 40px 20px;
 `
+
+export const GestureRecognizer = styled(GestureRecognizerBase)`
+  height: 100%;
+  width: 100%;
+`
+
 export const Video = styled(YouTube)`
   width: 100%;
-  height: 100px;
+  height: 100%;
+
   align-self: stretch;
 `
 
 export const VideoContainer = styled(View)`
-    display: flex;
-    flex-direction:column;
-    width: 100%;
-    margin: 10px auto;
+  display: flex;
+  flex-direction:column;
+  width: 100%;
+  /* margin: 10px auto; */
+  padding-bottom: 20px;
 `

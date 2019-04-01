@@ -7,6 +7,7 @@ export const ImageBackground = styled(ImageBackgroundBase)`
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+    width:100%;
 `
 
 export const Circle = styled(View)`
@@ -65,14 +66,16 @@ export const ControlContainer = styled(View)`
   flex-wrap: wrap;
   flex-direction: column;
   justify-content:center;
+  width:100%;
   top:${
   isIphoneX() ? '-85px' : '-95px'
   };
 
 `
 const Control = css`
-  width:303px;
-  height:80px;
+  width:80%;
+  height: 100%;
+  /* height:80px; */
   align-self:flex-end;
 
 `
@@ -86,7 +89,7 @@ export const ControlContainerInner = styled(TouchableOpacity)`
 export const LeftControl = styled(ImageBackgroundBase)`
   ${Control}
   align-self: flex-start;
-  margin-bottom:30px;
+  margin-bottom:40px;
 `
 
 export const RigthControl = styled(ImageBackgroundBase)`

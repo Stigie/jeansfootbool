@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import { Routes } from "../..";
-import { StatusBar, PixelRatio, StyleSheet } from "react-native";
+import { StatusBar, PixelRatio, StyleSheet, View, FlatList } from "react-native";
 import { NavigationInjectedProps } from "react-navigation";
 import {
   Container,
@@ -9,13 +9,15 @@ import {
   VideosContainer,
   Video,
   VideoContainer,
-  Text
+  Text,
+  ScrollContainer,
+  GestureRecognizer
 } from "./styles";
 import { IStoresMap } from "../../../types";
 import connector from "../../../decorators/connector";
-import { observable } from "mobx";
+import { observable, computed } from "mobx";
 import { observer } from "mobx-react";
-import GestureRecognizer from "react-native-swipe-gestures";
+
 
 const styles = StyleSheet.create({
   player: {
@@ -58,38 +60,57 @@ ReturnType<typeof storesToProps> & NavigationInjectedProps
     };
 
     const links = this.props.navigation.getParam('links')
+    // const data = links.map(d => {return {key: d.id}})
 
     return (
       <Container>
-        <GestureRecognizer config={config} onSwipeLeft={this.goBack}>
+        
           <StatusBar backgroundColor="blue" barStyle="light-content" />
           <ImageBackground source={require("./assets/background.jpg")}>
+            <ScrollContainer>
+            <GestureRecognizer config={config} onSwipeLeft={this.goBack}>
             <VideosContainer onLayout={({ nativeEvent: { layout: { width } } }) => {
               if (!this.state.containerMounted) this.setState({ containerMounted: true });
               if (this.state.containerWidth !== width) this.setState({ containerWidth: width });
-            }}>
-              {
-                links.map(item => (
-                  <VideoContainer key={item.name} >
-                    <Video
-                      videoId={item.id}   // The YouTube video ID
-                      play={false}             // control playback of video with true/false
-                      fullscreen={this.state.fullscreen}       // control whether the video should play in fullscreen or inline
-                      loop={true}
-                      ontrols={0}
-                      showFullscreenButton={true}
+            }}
+              data={links}
+              
+              renderItem={
+                ({ item }) => (
+                  <VideoContainer >
+                    <View
+                      // style={[
+                      //   { height: 200 },
+                      // ]}
                       style={[
-                        { height: PixelRatio.roundToNearestPixel(this.state.containerWidth  / (16 / 9)) },
+                        { height: PixelRatio.roundToNearestPixel(this.state.containerWidth / (16 / 9)) },
                       ]}
-                      onChangeFullscreen={e => this.setState({ fullscreen: e.isFullscreen })}
+                    >
+                    {/* <View style={[{width: 200}, {height:200}, {backgroundColor: '#ffffff'}]}/> */}
+                      <Video
+                        apiKey="AIzaSyDNWZndbbwD4ST9yPKvnoetGjjqdaghEUw"
+                        videoId={item.key}   // The YouTube video ID
+                        play={false}             // control playback of video with true/false
+                        fullscreen={this.state.fullscreen}       // control whether the video should play in fullscreen or inline
+                        loop={true}
+                        controls={2}
+                        modestbranding={true}
+                        showFullscreenButton={true}
+                        showinfo={false}
+                        rel={false}
+
+                        onChangeFullscreen={e => this.setState({ fullscreen: e.isFullscreen })}
                       />
+                    </View>
                     <Text>{item.name}</Text>
                   </VideoContainer>
-                ))
-              }
+                )
+              }>
             </VideosContainer>
+            </GestureRecognizer>
+            </ScrollContainer>
           </ImageBackground>
-        </GestureRecognizer>
+        
       </Container>
     );
   }
