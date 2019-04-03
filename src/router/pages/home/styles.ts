@@ -38,17 +38,17 @@ export const BottomIconsContainer = styled(View)`
   padding: 0 30px;
 `
 
-export const VK = styled(Image)`
+export const VK = styled(Animated.Image)`
   height:25px;
   width: 45px;
 `
 
-export const Instagram = styled(Image)`
+export const Instagram = styled(Animated.Image)`
   height:30px;
   width: 30px;
 `
 
-export const YouTube = styled(Image)`
+export const YouTube = styled(Animated.Image)`
   height:30px;
   width: 40px;
 `
@@ -77,7 +77,7 @@ const Control = css`
 
 `
 
-export const ControlContainerInner = styled(TouchableOpacity)`
+export const ControlContainerInner = styled(Animated.View)`
   width: 100%;
   display:flex;
   align-self:stretch;

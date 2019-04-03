@@ -73,10 +73,11 @@ ReturnType<typeof storesToProps> & NavigationInjectedProps
                   <VideoContainer key={item.name} >
                     <Video
                       videoId={item.id}   // The YouTube video ID
-                      play={false}             // control playback of video with true/false
+                      play={true}             // control playback of video with true/false
                       fullscreen={this.state.fullscreen}       // control whether the video should play in fullscreen or inline
                       loop={true}
-                      ontrols={0}
+                      controls={1}
+                      apiKey="AIzaSyDNWZndbbwD4ST9yPKvnoetGjjqdaghEUw"
                       showFullscreenButton={true}
                       style={[
                         { height: PixelRatio.roundToNearestPixel(this.state.containerWidth  / (16 / 9)) },
