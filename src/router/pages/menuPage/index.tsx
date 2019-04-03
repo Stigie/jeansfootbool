@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import { Routes } from "../..";
-import { StatusBar } from "react-native";
+import { StatusBar, PixelRatio } from "react-native";
 import { NavigationInjectedProps } from "react-navigation";
 import {
   Container,
@@ -22,10 +22,14 @@ import menu from './data'
 
 @observer
 class MenuPage extends Component<
-  ReturnType<typeof storesToProps> & NavigationInjectedProps
+ReturnType<typeof storesToProps> & NavigationInjectedProps
 > {
   static navigationOptions = {
     title: ""
+  };
+
+  state = {
+    containerWidth: 100,
   };
 
   public goBack = () => {
@@ -33,7 +37,7 @@ class MenuPage extends Component<
   };
 
   public openCategory = (links: []) => {
-    this.props.navigation.navigate(Routes.Video, {links});
+    this.props.navigation.navigate(Routes.Video, { links });
   };
 
   public render() {
@@ -46,12 +50,18 @@ class MenuPage extends Component<
       <Container>
         <GestureRecognizer config={config} onSwipeLeft={this.goBack}>
           <StatusBar backgroundColor="blue" barStyle="light-content" />
-          <ImageBackground source={require("./assets/background.jpg")}>
+          <ImageBackground source={require("./assets/background.jpg")}
+            onLayout={({ nativeEvent: { layout: { width } } }) => {
+              if (this.state.containerWidth !== width) this.setState({ containerWidth: width });
+            }}>
             <ControlContainer>
               {menu.map(item => (
                 <ControlContainerInner
                   key={item.name}
-                  onPress={() => {this.openCategory(item.children)}}
+                  onPress={() => { this.openCategory(item.children) }}
+                  style={[
+                    { height: PixelRatio.roundToNearestPixel(this.state.containerWidth / 10.8) },
+                  ]}
                 >
                   {item.item}
                 </ControlContainerInner>

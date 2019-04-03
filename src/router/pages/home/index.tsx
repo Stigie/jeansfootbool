@@ -14,9 +14,15 @@ import {
   ControlContainer,
   LeftControl,
   RigthControl,
-  ControlContainerInner,
+  ControlContainerInner
 } from "./styles";
-import { StatusBar, Linking, TouchableOpacity, Animated } from "react-native";
+import {
+  StatusBar,
+  Linking,
+  TouchableOpacity,
+  Animated,
+  PixelRatio
+} from "react-native";
 import { IStoresMap } from "../../../types";
 import connector from "../../../decorators/connector";
 import { observable } from "mobx";
@@ -38,17 +44,24 @@ class HomePage extends Component<
   };
 
   state = {
-    anim: new Animated.Value(-200)
-  }
+    anim: new Animated.Value(-200),
+    containerWidth: 100
+  };
 
-  componentDidMount(){
-    Animated.timing(                  // Animate over time
-      this.state.anim,            // The animated value to drive
+  public goToMenu = () => {
+    const { navigation } = this.props;
+    navigation.navigate(Routes.Menu);
+  };
+
+  componentDidMount() {
+    Animated.timing(
+      // Animate over time
+      this.state.anim, // The animated value to drive
       {
-        toValue: 0,                   // Animate to opacity: 1 (opaque)
-        duration: 700,              // Make it take a while
+        toValue: 0, // Animate to opacity: 1 (opaque)
+        duration: 700 // Make it take a while
       }
-    ).start();  
+    ).start();
   }
 
   public goToMenu = () => {
@@ -56,7 +69,7 @@ class HomePage extends Component<
     navigation.navigate(Routes.Menu);
   };
 
-  public goToTelegram(){
+  public goToTelegram() {
     Linking.canOpenURL("https://t.me/addstickers/jeansfootball").then(
       supported => {
         if (supported) {
@@ -68,23 +81,19 @@ class HomePage extends Component<
         }
       }
     );
-  };
+  }
 
-  public goToVK(){
-    Linking.canOpenURL("https://vk.com/id10362643").then(
-      supported => {
-        if (supported) {
-          Linking.openURL("https://vk.com/id10362643");
-        } else {
-          console.log(
-            "Don't know how to open URI: https://vk.com/id10362643"
-          );
-        }
+  public goToVK() {
+    Linking.canOpenURL("https://vk.com/id10362643").then(supported => {
+      if (supported) {
+        Linking.openURL("https://vk.com/id10362643");
+      } else {
+        console.log("Don't know how to open URI: https://vk.com/id10362643");
       }
-    );
-  };
+    });
+  }
 
-  public goToInstagram(){
+  public goToInstagram() {
     Linking.canOpenURL("https://www.instagram.com/journal2403/").then(
       supported => {
         if (supported) {
@@ -96,22 +105,23 @@ class HomePage extends Component<
         }
       }
     );
-  };
+  }
 
-  public goToYouTube(){
-    Linking.canOpenURL("https://www.youtube.com/channel/UCvD2osclpNlKGjFaL37VWtg").then(
-      supported => {
-        if (supported) {
-          Linking.openURL("https://www.youtube.com/channel/UCvD2osclpNlKGjFaL37VWtg");
-        } else {
-          console.log(
-            "Don't know how to open URI: https://www.youtube.com/channel/UCvD2osclpNlKGjFaL37VWtg"
-          );
-        }
+  public goToYouTube() {
+    Linking.canOpenURL(
+      "https://www.youtube.com/channel/UCvD2osclpNlKGjFaL37VWtg"
+    ).then(supported => {
+      if (supported) {
+        Linking.openURL(
+          "https://www.youtube.com/channel/UCvD2osclpNlKGjFaL37VWtg"
+        );
+      } else {
+        console.log(
+          "Don't know how to open URI: https://www.youtube.com/channel/UCvD2osclpNlKGjFaL37VWtg"
+        );
       }
-    );
-  };
-
+    });
+  }
 
   public render() {
     const { anim } = this.state;
@@ -123,23 +133,65 @@ class HomePage extends Component<
           <Circle>
             <Logo source={require("./assets/logo_1.png")} />
           </Circle>
-          <ControlContainer>
-            <ControlContainerInner onPress={this.goToMenu} style={{left: anim}} >
-              <LeftControl source={require("./assets/nachat_obuchenie.png")} />
+          <ControlContainer
+            onLayout={({
+              nativeEvent: {
+                layout: { width }
+              }
+            }) => {
+              if (this.state.containerWidth !== width)
+                this.setState({ containerWidth: width });
+            }}
+          >
+            <ControlContainerInner
+              onPress={this.goToMenu}
+              style={[
+                {
+                  height: PixelRatio.roundToNearestPixel(
+                    this.state.containerWidth / 6
+                  )
+                },
+                { marginBottom: 40 },
+                { left: anim }
+              ]}
+            >
+              <LeftControl
+                source={require("./assets/nachat_obuchenie.png")}
+                resizeMode={"stretch"}
+              />
             </ControlContainerInner>
-            <ControlContainerInner onPress={this.goToTelegram}  style={{right: anim}}>
-              <RigthControl source={require("./assets/poluchit_stikery.png")} />
+            <ControlContainerInner
+              onPress={this.goToTelegram}
+              style={[
+                {
+                  height: PixelRatio.roundToNearestPixel(
+                    this.state.containerWidth / 6
+                  )
+                },
+                { right: anim }
+              ]}
+            >
+              <RigthControl
+                source={require("./assets/poluchit_stikery.png")}
+                resizeMode={"stretch"}
+              />
             </ControlContainerInner>
           </ControlContainer>
           <BottomIconsContainer>
-            <TouchableOpacity onPress={this.goToVK} >
-              <VK source={require("./assets/vk.png")} style={{left: anim}} />
+            <TouchableOpacity onPress={this.goToVK}>
+              <VK source={require("./assets/vk.png")} style={{ left: anim }} />
             </TouchableOpacity>
-            <TouchableOpacity  >
-              <Instagram source={require("./assets/Instagram_icon.png")} style={{bottom: anim}} />
+            <TouchableOpacity>
+              <Instagram
+                source={require("./assets/Instagram_icon.png")}
+                style={{ bottom: anim }}
+              />
             </TouchableOpacity>
-            <TouchableOpacity onPress={this.goToYouTube} >
-              <YouTube source={require("./assets/yutub.png")} style={{right: anim}} />
+            <TouchableOpacity onPress={this.goToYouTube}>
+              <YouTube
+                source={require("./assets/yutub.png")}
+                style={{ right: anim }}
+              />
             </TouchableOpacity>
           </BottomIconsContainer>
         </ImageBackground>
