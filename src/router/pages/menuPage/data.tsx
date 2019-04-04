@@ -58,8 +58,16 @@ const menu = [
         key: "dh0RtDmOYJU"
       },
       {
-        name: "САМАЯ КРУТАЯ ФИШКА В ФУТБОЛЕ ТЕЛЕПОРТ от Séan Garnier/ОБУЧЕНИ",
+        name: "САМАЯ КРУТАЯ ФИШКА В ФУТБОЛЕ ТЕЛЕПОРТ от Séan Garnier/ОБУЧЕНИИ",
         key: "tJApc1DRQWI"
+      },
+      {
+        name: "ЛУЧШИЕ ФИНТЫ для ПРОБРОСА в ОЧКО",
+        key: "QNTMoNTvj4w"
+      },
+      {
+        name: "МЯЧ 5 КГ для ПАННА ФИНТОВ",
+        key: "uAtD3H4Uzwo"
       }
     ]
   },
@@ -180,6 +188,11 @@ const menu = [
         name:
           "НАУЧИСЬ КРУТИТЬ С ОСТРОГО УГЛА КАК ФРЭНК ЛЭМПАРД! СУПЕР ГОЛ ⚽ FRANK LAMPARD SKILL",
         key: "-B5VPfXEvWY"
+      },
+      {
+        name:
+          "ПОВТОРИЛ УДАР КРИШТИАНУ РОНАЛДУ?!",
+        key: "fshSUaWurLE"
       }
     ]
   },
@@ -262,6 +275,22 @@ const menu = [
       {
         name: "ФИНТЫ ДЛЯ НОВИЧКОВ ОТ POGBA И ZkeyANE",
         key: "_crTwKlTm_8"
+      },
+      {
+        name: "ФИНТ AKKA 3000 ОБУЧЕНИЕ за 3 МИНУТЫ",
+        key: "hN3Zg11ghFI"
+      },
+      {
+        name: "2 БАЗОВЫХ ФИНТА В МИНИ-ФУТБОЛЕ",
+        key: "QqIalm5vg98"
+      },
+      {
+        name: "ЛУЧШИЙ ФИНТ НЕЙМАРА в ИГРЕ",
+        key: "txk0F8FxPu0"
+      },
+      {
+        name: "САМЫЙ ЧЕТКИЙ ФИНТ РОНАЛДИНЬО В МИНИ-ФУТБОЛЕ",
+        key: "SIqPBT471SU"
       }
     ]
   },
