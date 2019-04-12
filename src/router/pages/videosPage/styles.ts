@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Text as TextBase, View, Animated, ImageBackground as ImageBackgroundBase, ScrollView, PixelRatio, FlatList } from 'react-native'
+import { Text as TextBase, View, Animated, ImageBackground as ImageBackgroundBase, ScrollView, TouchableOpacity, FlatList } from 'react-native'
 import YouTube from "react-native-youtube";
 import { isIphoneX, getStatusBarHeight } from 'react-native-iphone-x-helper'
 import GestureRecognizerBase from "react-native-swipe-gestures";
@@ -11,7 +11,7 @@ export const ImageBackground = styled(ImageBackgroundBase)`
     justify-content: center;
     height: 100%;
     width:100%;
-    padding-bottom:30px;
+    padding-bottom:10px;
     padding-top:${
   getStatusBarHeight()
   };
@@ -35,6 +35,7 @@ export const Container = styled(View)`
 
 export const ScrollContainer = styled(View)`
     height: 100%;
+    padding-top:40px;
     padding-bottom:20px;
     /* background-color: #000000; */
 `
@@ -48,7 +49,7 @@ export const VideosContainer = styled(FlatList)`
   justify-content:space-between;
   align-items: center;
   align-self: center; */
-  padding:20px 20px 40px 20px;
+  padding:20px 20px 0px 20px;
 `
 
 export const GestureRecognizer = styled(GestureRecognizerBase)`
@@ -69,4 +70,10 @@ export const VideoContainer = styled(View)`
   width: 100%;
   /* margin: 10px auto; */
   padding-bottom: 20px;
+`
+export const Back = styled(TouchableOpacity)`
+  position: absolute;
+  top: 0;
+  left:20px;
+  color: #fff;
 `

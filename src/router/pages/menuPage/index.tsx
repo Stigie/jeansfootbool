@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import { Routes } from "../..";
-import { StatusBar, PixelRatio } from "react-native";
+import { StatusBar, PixelRatio, View } from "react-native";
 import { NavigationInjectedProps } from "react-navigation";
 import {
   Container,
@@ -9,7 +9,8 @@ import {
   ControlContainer,
   ControlContainerInner,
   Logo,
-  LogoContainer
+  LogoContainer,
+  Colum
 } from "./styles";
 import { IStoresMap } from "../../../types";
 import connector from "../../../decorators/connector";
@@ -55,8 +56,9 @@ ReturnType<typeof storesToProps> & NavigationInjectedProps
               if (this.state.containerWidth !== width) this.setState({ containerWidth: width });
             }}>
             <ControlContainer>
-              {menu.map(item => (
-                <ControlContainerInner
+              <Colum>
+              {menu.map((item, index) => {
+                return index%2 !== 1 && (<ControlContainerInner
                   key={item.name}
                   onPress={() => { this.openCategory(item.children) }}
                   style={[
@@ -64,8 +66,22 @@ ReturnType<typeof storesToProps> & NavigationInjectedProps
                   ]}
                 >
                   {item.item}
-                </ControlContainerInner>
-              ))}
+                </ControlContainerInner>)
+              })}
+              </Colum>
+              <Colum>
+              {menu.map((item, index) => {
+                return index%2 === 1 && (<ControlContainerInner
+                  key={item.name}
+                  onPress={() => { this.openCategory(item.children) }}
+                  style={[
+                    { height: PixelRatio.roundToNearestPixel(this.state.containerWidth / 10.8) },
+                  ]}
+                >
+                  {item.item}
+                </ControlContainerInner>)
+              })}
+              </Colum>
             </ControlContainer>
             <LogoContainer>
               <Logo source={require("../home/assets/logo_1.png")} />

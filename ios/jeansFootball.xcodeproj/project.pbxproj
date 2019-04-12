@@ -37,6 +37,7 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* jeansFootballTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* jeansFootballTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
+		2E15BB97E64041939D29E909 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AAA34FCE344B8B9B541BAB /* libRNGestureHandler.a */; };
 		34931FC8B4CA4E5587C5DDCA /* libRNUUIDGenerator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6510FEAF623F4EA9A29A163C /* libRNUUIDGenerator.a */; };
 		6FF4EDE929404A37958216CC /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = D009F9166CAC481E9F0FC8EF /* YTPlayerView-iframe-player.html */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -336,6 +337,20 @@
 			remoteGlobalIDString = F60690131CA2766F0003FB26;
 			remoteInfo = RealmReact;
 		};
+		ACA2802C225553CC00CC6907 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE275A5E1DD54328AC7C765A /* RNGestureHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNGestureHandler;
+		};
+		ACA2802E225553CC00CC6907 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE275A5E1DD54328AC7C765A /* RNGestureHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5C32A36220C603B000FFB8D;
+			remoteInfo = "RNGestureHandler-tvOS";
+		};
 		ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */;
@@ -369,6 +384,7 @@
 		2D02E4901E0B4A5D006451C7 /* jeansFootball-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "jeansFootball-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CE8DA781F5438A86CB03EA /* libRCTYouTube.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTYouTube.a; sourceTree = "<group>"; };
+		55AAA34FCE344B8B9B541BAB /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		6510FEAF623F4EA9A29A163C /* libRNUUIDGenerator.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNUUIDGenerator.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
@@ -376,6 +392,7 @@
 		99274B7F868743C68ED3FF4B /* RNUUIDGenerator.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNUUIDGenerator.xcodeproj; path = "../node_modules/react-native-uuid-generator/ios/RNUUIDGenerator.xcodeproj"; sourceTree = "<group>"; };
 		A047F575FC0B4B2D992E5C0C /* libRealmReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRealmReact.a; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		AE275A5E1DD54328AC7C765A /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
 		B257A23223BE4F4EBB60A9BB /* RCTYouTube.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTYouTube.xcodeproj; path = "../node_modules/react-native-youtube/RCTYouTube.xcodeproj"; sourceTree = "<group>"; };
 		B2F2F16F6EDA45BBB5A81CCB /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B62C8F3CD73D4B49BE7EFADF /* RealmReact.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmReact.xcodeproj; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; };
@@ -416,6 +433,7 @@
 				8C87AB5720C04263AB2618F8 /* libRealmReact.a in Frameworks */,
 				0FD8E786C59F4B78B874E3BA /* libc++.tbd in Frameworks */,
 				B3E7A3C96304430E887D47F5 /* libz.tbd in Frameworks */,
+				2E15BB97E64041939D29E909 /* libRNGestureHandler.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +636,7 @@
 				99274B7F868743C68ED3FF4B /* RNUUIDGenerator.xcodeproj */,
 				B257A23223BE4F4EBB60A9BB /* RCTYouTube.xcodeproj */,
 				B62C8F3CD73D4B49BE7EFADF /* RealmReact.xcodeproj */,
+				AE275A5E1DD54328AC7C765A /* RNGestureHandler.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -664,6 +683,7 @@
 				6510FEAF623F4EA9A29A163C /* libRNUUIDGenerator.a */,
 				31CE8DA781F5438A86CB03EA /* libRCTYouTube.a */,
 				A047F575FC0B4B2D992E5C0C /* libRealmReact.a */,
+				55AAA34FCE344B8B9B541BAB /* libRNGestureHandler.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -688,6 +708,15 @@
 			isa = PBXGroup;
 			children = (
 				AC194E20224BF41000599EF9 /* libRealmReact.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACA28028225553CC00CC6907 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACA2802D225553CC00CC6907 /* libRNGestureHandler.a */,
+				ACA2802F225553CC00CC6907 /* libRNGestureHandler-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -790,9 +819,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
-					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = UBXQ9P373U;
-					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -872,6 +898,10 @@
 				{
 					ProductGroup = AC194E1C224BF41000599EF9 /* Products */;
 					ProjectRef = B62C8F3CD73D4B49BE7EFADF /* RealmReact.xcodeproj */;
+				},
+				{
+					ProductGroup = ACA28028225553CC00CC6907 /* Products */;
+					ProjectRef = AE275A5E1DD54328AC7C765A /* RNGestureHandler.xcodeproj */;
 				},
 				{
 					ProductGroup = AC194D95224BF07D00599EF9 /* Products */;
@@ -1162,6 +1192,20 @@
 			remoteRef = AC194E1F224BF41000599EF9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		ACA2802D225553CC00CC6907 /* libRNGestureHandler.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNGestureHandler.a;
+			remoteRef = ACA2802C225553CC00CC6907 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		ACA2802F225553CC00CC6907 /* libRNGestureHandler-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNGestureHandler-tvOS.a";
+			remoteRef = ACA2802E225553CC00CC6907 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1316,12 +1360,14 @@
 					"$(SRCROOT)..\node_modules\neact-native-uuid-generatorios",
 					"$(SRCROOT)..\node_modules\neact-native-youtube/**",
 					"$(SRCROOT)/../node_modules/realm/src/**",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = jeansFootballTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1349,12 +1395,14 @@
 					"$(SRCROOT)..\node_modules\neact-native-uuid-generatorios",
 					"$(SRCROOT)..\node_modules\neact-native-youtube/**",
 					"$(SRCROOT)/../node_modules/realm/src/**",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = jeansFootballTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1375,12 +1423,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = UBXQ9P373U;
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)..\node_modules\neact-native-uuid-generatorios",
-					"$(SRCROOT)..\node_modules\neact-native-youtube/**",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-uuid-generatorios",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-youtube/**",
 					"$(SRCROOT)/../node_modules/realm/src/**",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = jeansFootball/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1401,12 +1454,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UBXQ9P373U;
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)..\node_modules\neact-native-uuid-generatorios",
-					"$(SRCROOT)..\node_modules\neact-native-youtube/**",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-uuid-generatorios",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-youtube/**",
 					"$(SRCROOT)/../node_modules/realm/src/**",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = jeansFootball/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1439,11 +1497,13 @@
 					"$(SRCROOT)..\node_modules\neact-native-uuid-generatorios",
 					"$(SRCROOT)..\node_modules\neact-native-youtube/**",
 					"$(SRCROOT)/../node_modules/realm/src/**",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = "jeansFootball-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1475,11 +1535,13 @@
 					"$(SRCROOT)..\node_modules\neact-native-uuid-generatorios",
 					"$(SRCROOT)..\node_modules\neact-native-youtube/**",
 					"$(SRCROOT)/../node_modules/realm/src/**",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = "jeansFootball-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1510,11 +1572,13 @@
 					"$(SRCROOT)..\node_modules\neact-native-uuid-generatorios",
 					"$(SRCROOT)..\node_modules\neact-native-youtube/**",
 					"$(SRCROOT)/../node_modules/realm/src/**",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = "jeansFootball-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1545,11 +1609,13 @@
 					"$(SRCROOT)..\node_modules\neact-native-uuid-generatorios",
 					"$(SRCROOT)..\node_modules\neact-native-youtube/**",
 					"$(SRCROOT)/../node_modules/realm/src/**",
+					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 				);
 				INFOPLIST_FILE = "jeansFootball-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (

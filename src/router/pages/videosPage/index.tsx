@@ -11,7 +11,8 @@ import {
   VideoContainer,
   Text,
   ScrollContainer,
-  GestureRecognizer
+  GestureRecognizer,
+  Back
 } from "./styles";
 import { IStoresMap } from "../../../types";
 import connector from "../../../decorators/connector";
@@ -27,7 +28,6 @@ const styles = StyleSheet.create({
   },
 });
 
-@observer
 class VideoPage extends Component<
 ReturnType<typeof storesToProps> & NavigationInjectedProps
 > {
@@ -47,6 +47,7 @@ ReturnType<typeof storesToProps> & NavigationInjectedProps
     fullscreen: false,
     containerMounted: false,
     containerWidth: 100,
+    mess: ''
   };
 
   public goBack = () => {
@@ -64,17 +65,17 @@ ReturnType<typeof storesToProps> & NavigationInjectedProps
 
     return (
       <Container>
-        
-          <StatusBar backgroundColor="blue" barStyle="light-content" />
-          <ImageBackground source={require("./assets/background.jpg")}>
-            <ScrollContainer>
-            <GestureRecognizer config={config} onSwipeLeft={this.goBack}>
+        <StatusBar backgroundColor="blue" barStyle="light-content" />
+        <ImageBackground source={require("./assets/background.jpg")}>
+          <ScrollContainer >
+          <Back onPress={this.goBack}><Text>&#8592;Назад</Text></Back>
+            {/* <GestureRecognizer config={config} onSwipeLeft={this.goBack}> */}
             <VideosContainer onLayout={({ nativeEvent: { layout: { width } } }) => {
               if (!this.state.containerMounted) this.setState({ containerMounted: true });
               if (this.state.containerWidth !== width) this.setState({ containerWidth: width });
             }}
               data={links}
-              
+
               renderItem={
                 ({ item }) => (
                   <VideoContainer >
@@ -86,31 +87,31 @@ ReturnType<typeof storesToProps> & NavigationInjectedProps
                         { height: PixelRatio.roundToNearestPixel(this.state.containerWidth / (16 / 9)) },
                       ]}
                     >
-                    {/* <View style={[{width: 200}, {height:200}, {backgroundColor: '#ffffff'}]}/> */}
+                      {/* <View style={[{width: 200}, {height:200}, {backgroundColor: '#ffffff'}]}/> */}
                       <Video
                         apiKey="AIzaSyDNWZndbbwD4ST9yPKvnoetGjjqdaghEUw"
                         videoId={item.key}   // The YouTube video ID
                         play={false}             // control playback of video with true/false
                         fullscreen={this.state.fullscreen}       // control whether the video should play in fullscreen or inline
                         loop={true}
-                        controls={2}
-                        modestbranding={true}
-                        showFullscreenButton={true}
-                        showinfo={false}
+                        controls={1}
+                        // modestbranding={true}
+                        // showFullscreenButton={true}
+                        // showinfo={false}
                         rel={false}
 
                         onChangeFullscreen={e => this.setState({ fullscreen: e.isFullscreen })}
                       />
                     </View>
-                    <Text>{item.name}</Text>
+                    <Text style={[{ color: 'white' }]}>{item.name}</Text>
                   </VideoContainer>
                 )
               }>
             </VideosContainer>
-            </GestureRecognizer>
-            </ScrollContainer>
-          </ImageBackground>
-        
+            {/* </GestureRecognizer> */}
+          </ScrollContainer>
+        </ImageBackground>
+
       </Container>
     );
   }

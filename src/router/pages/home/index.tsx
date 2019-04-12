@@ -14,14 +14,15 @@ import {
   ControlContainer,
   LeftControl,
   RigthControl,
-  ControlContainerInner
+  ControlContainerInner,
+  TouchableOpacityControls,
 } from "./styles";
 import {
   StatusBar,
   Linking,
-  TouchableOpacity,
   Animated,
-  PixelRatio
+  PixelRatio,
+  TouchableOpacity
 } from "react-native";
 import { IStoresMap } from "../../../types";
 import connector from "../../../decorators/connector";
@@ -30,7 +31,7 @@ import { observer } from "mobx-react";
 
 @observer
 class HomePage extends Component<
-  ReturnType<typeof storesToProps> & NavigationInjectedProps
+ReturnType<typeof storesToProps> & NavigationInjectedProps
 > {
   @observable
   public inputText: string | null = null;
@@ -63,11 +64,6 @@ class HomePage extends Component<
       }
     ).start();
   }
-
-  public goToMenu = () => {
-    const { navigation } = this.props;
-    navigation.navigate(Routes.Menu);
-  };
 
   public goToTelegram() {
     Linking.canOpenURL("https://t.me/addstickers/jeansfootball").then(
@@ -144,7 +140,6 @@ class HomePage extends Component<
             }}
           >
             <ControlContainerInner
-              onPress={this.goToMenu}
               style={[
                 {
                   height: PixelRatio.roundToNearestPixel(
@@ -154,14 +149,14 @@ class HomePage extends Component<
                 { marginBottom: 40 },
                 { left: anim }
               ]}
-            >
-              <LeftControl
-                source={require("./assets/nachat_obuchenie.png")}
-                resizeMode={"stretch"}
-              />
+            ><TouchableOpacityControls onPress={this.goToMenu}>
+                <LeftControl
+                  source={require("./assets/nachat_obuchenie.png")}
+                  resizeMode={"stretch"}
+                />
+              </TouchableOpacityControls>
             </ControlContainerInner>
             <ControlContainerInner
-              onPress={this.goToTelegram}
               style={[
                 {
                   height: PixelRatio.roundToNearestPixel(
@@ -171,17 +166,19 @@ class HomePage extends Component<
                 { right: anim }
               ]}
             >
-              <RigthControl
-                source={require("./assets/poluchit_stikery.png")}
-                resizeMode={"stretch"}
-              />
+            <TouchableOpacityControls onPress={this.goToTelegram}>
+                <RigthControl
+                  source={require("./assets/poluchit_stikery.png")}
+                  resizeMode={"stretch"}
+                />
+              </TouchableOpacityControls>
             </ControlContainerInner>
           </ControlContainer>
           <BottomIconsContainer>
             <TouchableOpacity onPress={this.goToVK}>
               <VK source={require("./assets/vk.png")} style={{ left: anim }} />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.goToInstagram}>
               <Instagram
                 source={require("./assets/Instagram_icon.png")}
                 style={{ bottom: anim }}

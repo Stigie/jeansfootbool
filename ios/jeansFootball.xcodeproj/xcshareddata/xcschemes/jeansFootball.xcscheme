@@ -124,6 +124,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "jeansFootball"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

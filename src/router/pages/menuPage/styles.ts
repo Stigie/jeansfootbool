@@ -27,7 +27,7 @@ export const LogoContainer = styled(View)`
   bottom: 0;
   left:0;
   width: 100%;
-  height: 120px;
+  height: 100px;
   display:flex;
   justify-content: center;
   flex-direction:row;
@@ -35,7 +35,7 @@ export const LogoContainer = styled(View)`
 
 export const Logo = styled(Image)`
   height: 100%;
-  width:150px;
+  width:60px;
 `
 export const ControlContainer = styled(View)`
   width: 100%;
@@ -45,11 +45,12 @@ export const ControlContainer = styled(View)`
   justify-content:space-between;
   align-items: center;
   align-self: center;
+  /* height: 100%; */
   /* height: 90%; */
 
 `
 const Control = css`
-  width:45%;
+  width:100%;
   margin-bottom:30px;
 
 `
@@ -70,4 +71,12 @@ export const LeftControl = styled(Image)`
 
 export const RigthControl = styled(Image)`
   ${ImageControl}
+`
+
+export const Colum =styled(View)`
+  width:45%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
 `

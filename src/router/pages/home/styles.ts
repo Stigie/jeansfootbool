@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Text as TextBase, Image, View, Animated, ImageBackground as ImageBackgroundBase, TouchableOpacity } from 'react-native'
+import { Text as TextBase, Image, View, Animated, ImageBackground as ImageBackgroundBase, TouchableOpacity as TouchableOpacityBase } from 'react-native'
 import { isIphoneX } from 'react-native-iphone-x-helper'
 
 export const ImageBackground = styled(ImageBackgroundBase)`
@@ -95,4 +95,9 @@ export const LeftControl = styled(ImageBackgroundBase)`
 export const RigthControl = styled(ImageBackgroundBase)`
   ${Control}
   align-self: flex-end;
+`
+
+export const TouchableOpacityControls = styled(TouchableOpacityBase)`
+  height: 100%;
+  width: 100%;
 `
